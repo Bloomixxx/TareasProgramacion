@@ -1,47 +1,62 @@
-import java.util.Scanner;
-public class Cliente{
+import java.util.*;
+
+public class Cliente {
+
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
 
-        System.out.println("Escribe titulo (Libro 1):");
-        String titulo = leer.next();
+        System.out.println("************PERSONA**********");
+        System.out.println("NOMBRE:");
+        String nombre = leer.next();
 
-        System.out.println("Escribe autor(es) (Libro 1):");
-        String autores = leer.next();
+        System.out.println("RESIDENCIA:");
+        String residencia = leer.next();
+        System.out.println("************DATOS DE LA PERSONA**********");
 
-        Libro libro = new Libro(titulo, autores);
+        Persona p = new Persona(nombre, residencia);
+        //OVERRIDING
+        p.imprimePersona();
 
-        //Libro libro2 = new Libro(titulo, autor, precio);
+        System.out.println("************ESTUDIANTE**********");
+        System.out.println("NOMBRE:");
+        nombre = leer.next();
 
-            System.out.println("Escribe titulo 2:");
-            titulo = leer.next();
+        System.out.println("RESIDENCIA:");
+        residencia = leer.next();
 
-            System.out.println("Escribe autor(es) 2:");
-            autores = leer.next();
+        System.out.println("FACULTAD:");
+        String facultad = leer.next();
 
-            Libro libro2 = new Libro(titulo, autores);
+        System.out.println("PAGO INSCRIPCION:");
+        float pago = leer.nextFloat();
 
-            System.out.println("---------------------------------------");
-            System.out.println("DATOS DEL PRIMER LIBRO: ");
-            libro.imprimeLibro();
-            System.out.println("---------------------------------------");
-            System.out.println("DATOS DEL SEGUNDO LIBRO: ");
-            libro2.imprimeLibro();
-            System.out.println("---------------------------------------");
-
-            
-            
-            System.out.println("Inserta precio (libro 1):");
-            double precio = leer.nextDouble();
-            libro.setPrecio(precio);
-            System.out.println("---------------------------------------");
-            System.out.println("DATOS ACTUALIZADOS PRIMER LIBRO: ");
-            libro.imprimePrecioLibro();
-            System.out.println("---------------------------------------");
-            
-            leer.close();
+        System.out.println("************DATOS DEL ESTUDIANTE**********");
+            //Polimorfismo -  OVERRIDING 
+        Estudiante e= new Estudiante(nombre, residencia, facultad, pago);
+        e.imprimePersona();
 
 
-        }
+        System.out.println("************CATEDRATICO**********");
+        System.out.println("NOMBRE:");
+        nombre = leer.next();
+
+        System.out.println("RESIDENCIA:");
+        residencia = leer.next();
+
+        System.out.println("FACULTAD:");
+        facultad = leer.next();
+
+        System.out.println("SALARIO:");
+        float salario = leer.nextFloat();
+
+        System.out.println("************DATOS DEL CATEDRATICO**********");
+
+        Catedratico c = new Catedratico(nombre, residencia, facultad, salario);
+       // POLIMORFISMO - OVERRIDING
+        c.imprimePersona();
+        
+
     }
+}
+ 
